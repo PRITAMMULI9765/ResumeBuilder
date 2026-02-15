@@ -12,11 +12,11 @@ function InputComponent({
   inputSpace = "",
 }) {
   const displayLabel = label || (name.charAt(0).toUpperCase() + name.slice(1));
-
+console.log("additionalClass", additionalClass);
   return (
     <>
-      <div className={`mb-3 ${additionalClass} mt-3`}>
-        <div className={`input_lable ${labelSpace}`}>
+      <div className={`mb-3  ${additionalClass} mt-3`}>
+        <div className={`form-label ${labelSpace}`}>
           <label htmlFor={name} className="form-label">
             {displayLabel}
           </label>

@@ -1,7 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
-
+import ButtonComponent from "../commonComponent/ButtonComponent";
 function TemplateSelector({ selectedTemplate, onSelectTemplate }) {
   const navigate = useNavigate();
   const templates = [
@@ -56,16 +57,17 @@ function TemplateSelector({ selectedTemplate, onSelectTemplate }) {
           </div>
         ))}
       </div>
-      <div style={{display: "flex", justifyContent: "flex-end"}}>
-
-      <button
-        onClick={() => navigate("/personalInfo")}
-        style={{borderRadius: "0px"}}
-        className="btn btn-outline-primary"
-        >
-        next <ArrowRightAltIcon />
-      </button>
-          </div>
+      <div
+        className="d-flex justify-between"
+        style={{ display: "flex", justifyContent: "flex-end", marginTop: "10px"}}
+      >
+       <ButtonComponent
+          text="Next"
+          onClick={() => navigate("/personalInfo")}
+          className="btn btn-outline-primary"
+          icon={<ArrowRightAltIcon />}
+        /> 
+      </div>
     </div>
   );
 }

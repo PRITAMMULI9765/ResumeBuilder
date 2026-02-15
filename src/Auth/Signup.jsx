@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { registerUserSchema } from "./auth.schema.jsx";
-import InputComponent from "../Component/InputComponent.jsx";
+// import InputComponent f";
 
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "", role: "user" });
@@ -31,7 +31,7 @@ function Signup() {
 
   return (
     <form onSubmit={onSubmit} noValidate>
-        <InputComponent type="text" onChange={handleChange} name="name" error={errors.name} />
+        {/* <InputComponent type="text" onChange={handleChange} name="name" error={errors.name} /> */}
       {/* <div className="mb-3">
         <label htmlFor="name" className="form-label">
           Name
@@ -45,10 +45,10 @@ function Signup() {
         />
         {errors.name && <div className="invalid-feedback">{errors.name}</div>}
       </div> */}
-      <InputComponent type="email" onChange={handleChange} name="email" error={errors.email} />
+      {/* <InputComponent type="email" onChange={handleChange} name="email" error={errors.email} />
       <InputComponent type="password" onChange={handleChange} name="password" error={errors.password} />
 
-      <InputComponent type="password" onChange={handleChange} name="file" error={errors.confirmPassword} />
+      <InputComponent type="password" onChange={handleChange} name="file" error={errors.confirmPassword} /> */}
 
       <div className="mb-3">
         <label htmlFor="role" className="form-label">

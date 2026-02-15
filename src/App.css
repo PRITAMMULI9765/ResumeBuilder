@@ -1,12 +1,23 @@
 .common_container {
-  border: 2px solid black;
   min-height: 80vh;
   padding: 20px;
-  background-color: #f5f5f5;
+  background-color: #EFF2F9;
 }
 
 .personal_info_heading {
-  border-bottom: 2px solid #d5cfcf;
+   color: #2E404A;
+  font-family: "Roboto Serif", serif;
+    font-size: 24px;
+    line-height: 130%;
+    font-weight: 600;
+}
+
+.personal_info_text {
+      font-family: Nunito, sans-serif;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 140%;
+    color: #3E5665;
 }
 
 .input_lable {
@@ -16,6 +27,9 @@
 
 .form-section {
   padding-right: 20px;
+  background-color: #FFFFFF;
+  padding-top: 10px;
+  padding: 20px;
 }
 
 .preview-section {
@@ -69,6 +83,7 @@
 }
 
 /* Template selector CSS start */
+
 .template-selector-container {
   margin-bottom: 40px;
   background: #f9f9f9;
@@ -95,7 +110,7 @@
 .template-card {
   background: white;
   border: 2px solid #e0e0e0;
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 24px;
   text-align: center;
   cursor: pointer;
@@ -600,3 +615,147 @@
 }
 
 /* Template folder CSS end */
+
+/* progress bar CSS start */
+.progress-bar-container {
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 20px;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  position: relative;
+}
+
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #999;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0 5px;
+  transition: all 0.3s ease;
+}
+
+/* Active Step */
+.progress-step.active .step-label {
+  color: #05A2FF;
+  font-weight: 600;
+}
+
+/* Completed Step */
+.progress-step.completed .step-number {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: #667eea;
+  color: white;
+  box-shadow: 0 2px 6px rgba(102, 126, 234, 0.2);
+}
+
+.progress-step.completed .step-number::after {
+  content: "✓";
+  position: absolute;
+  font-size: 20px;
+}
+
+.progress-step.completed .step-label {
+  color: #667eea;
+}
+
+/* Progress Line */
+.progress-line-container {
+  position: absolute;
+  top: 18px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #eee;
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.progress-line {
+  height: 100%;
+  background: #05A2FF;
+  /* background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); */
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .progress-steps {
+    gap: 8px;
+  }
+
+  .step-number {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .step-label {
+    font-size: 11px;
+  }
+
+  .progress-line-container {
+    top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .progress-steps {
+    gap: 4px;
+  }
+
+  .step-number {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .step-label {
+    font-size: 10px;
+  }
+
+  .progress-line-container {
+    top: 12px;
+  }
+
+  .progress-step.active .step-number {
+    transform: scale(1.05);
+  }
+}
+
+/* progress bar CSS end */

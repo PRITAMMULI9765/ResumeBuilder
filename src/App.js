@@ -8,6 +8,7 @@ import SelectTemplatePage from "./Component/Section/SelectTemplate";
 
 function App() {
   const [selectedTemplate, setSelectedTemplate] = useState("modern");
+  const [currentStep, setCurrentStep] = useState("contacts");
 
   return (
     <Router>
@@ -19,7 +20,7 @@ function App() {
           />
           <Route
             path="/personalInfo"
-            element={<PersonalInfo selectedTemplate={selectedTemplate} onSelectTemplate={setSelectedTemplate} />}
+            element={<PersonalInfo selectedTemplate={selectedTemplate} onSelectTemplate={setSelectedTemplate} currentStep={currentStep} setCurrentStep={setCurrentStep} />}
           />
         </Routes>
       </div>
