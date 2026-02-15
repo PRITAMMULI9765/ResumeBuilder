@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Signup from "./Auth/Signup";
+import PersonalInfo from "./Component/Section/PersonalInfo";
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import SelectTemplatePage from "./Component/Section/SelectTemplate";
 
 function App() {
+  const [selectedTemplate, setSelectedTemplate] = useState("modern");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="common_container">
+        <Routes>
+          <Route
+            path="/"
+            element={<SelectTemplatePage selectedTemplate={selectedTemplate} setSelectedTemplate={setSelectedTemplate} />}
+          />
+          <Route
+            path="/personalInfo"
+            element={<PersonalInfo selectedTemplate={selectedTemplate} onSelectTemplate={setSelectedTemplate} />}
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
